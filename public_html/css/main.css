@@ -1,0 +1,61 @@
+#calendar{
+    margin:0 auto;
+    width: 90%;
+}
+
+#header{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.day, .date-block{
+    float: left;
+    width: calc(100%/7);
+
+}
+
+#dates{
+    border-right:1px solid #ccc ;
+    border-bottom: 1px solid #ccc;
+}
+
+.date-block{
+    
+    border-top: 1px solid #ccc;
+    border-left:1px solid #ccc ;
+    height: 15vh;
+}
+
+.date-block.empty{
+    background-color: #eee;
+}
+
+#info-panel{
+    position: fixed;
+    top: 60px;
+    right: 100px;
+    background-color: white;
+    border:1px solid #ccc;
+}
+#info-panel label{
+    font-size: .8rem;
+    color:#aaa;
+}
+
+#info-panel .title, #info-panel .time-picker{
+    border-bottom:1px solid  #ccc;
+
+}
+
+#info-panel .title, #info-panel .time-picker, #info-panel .description{
+    padding: 10px;
+}
+
+.selected-date{
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+#description{
+    width: 100%;
+
+}
