@@ -1,12 +1,29 @@
 $(document).ready(function () {
 
+    var panel = {
+        el: '#info-panel',
+        open:function(isNew, e){
+            console.log(isNew);
+            $('#info-panel').addClass('open').css({
+                top:e.pageY+'px',
+                left:e.pageX+'px',
+            }).find('.title [contenteditable]').focus();
+
+            if(isNew)
+                $('#info-panel').addClass('new').removeClass('update');
+            else
+                $('#info-panel').addClass('update').removeClass('new');
+        },
+    };
+
     $('.date-block').dblclick(function(e){
-        $('#info-panel').addClass('open').css({
-            top:e.pageY+'px',
-            left:e.pageX+'px',
-        }).find('.title [contenteditable]').focus();
-       
+       panel.open(true, e);
+    }).on('dbclick','.event',function(e){
+       // e.stopPropagation();
+        panel.open(false,e);
+
     });
+
 
     $('#info-panel')
     .on('click','button', function(e){
